@@ -47,7 +47,7 @@ form {
   font-weight: 300;
   box-sizing: border-box;
   border: none;
-  width: 16%;
+  width: 15%;
   font-size: 1em;
 }
 .new-task input:focus {
