@@ -1,0 +1,39 @@
+<head>
+  <title>ResToDo</title>
+
+  <link rel="icon" sizes="16x16 32x32" href="https://pbs.twimg.com/profile_images/1013757180/FaviconBen.png">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header>
+      <h1 id="title">Restaurants To-Do</h1>
+      {{> loginButtons}}
+    </header>
+    {{#if currentUser}}
+    <form class="new-task">
+      <input type="text" id="resto" placeholder="Restaurant name" />
+      <input type="text" id="cuisine" placeholder="Type of cuisine" />
+      <input type="text" id="place" placeholder="Location, City" />
+      <input type="submit" id="add" value="">
+    </form>
+    {{/if}}
+
+    <ul>
+      {{#each tasks}} {{> task}} {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="text">
+      <strong>{{username}}</strong> - {{restaurant}} - {{type}} - {{location}}
+    </span>
+  </li>
+</template>
