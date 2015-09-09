@@ -86,7 +86,7 @@ if (Meteor.isClient) {
 
   Template.task.events({
     "click .toggle-checked": function() {
-      // Set the checked property to the opposite of its current value
+    // Set the checked property to the opposite of its current value
       Meteor.call("setChecked", this._id, !this.checked);
     },
     "click .delete": function() {
